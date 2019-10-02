@@ -1,353 +1,296 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-    <link
-      href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap"
-      rel="stylesheet"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-    <link rel="stylesheet" href="css/main.css" />
-    <title>Flower Shop</title>
-  </head>
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap" rel="stylesheet" />
 
-  <body>
-    <div class="container">
-      <!-- Header -->
-      <header class="header">
-        <!-- Logo-area -->
-        <div class="logo-area">
-          <div class="logo">
-            <img src="img/logo.png" alt="Logo" />
-          </div>
-          <div class="info">
-            <div class="social-links">
-              <a href="#" class="social-links__icon"
-                ><ion-icon name="logo-facebook"></ion-icon
-              ></a>
-              <a href="#" class="social-links__icon"
-                ><ion-icon name="logo-twitter"></ion-icon
-              ></a>
-              <a href="#" class="social-links__icon"
-                ><ion-icon name="logo-instagram"></ion-icon
-              ></a>
-            </div>
-            <div class="login">
-              <p class="login__text">Log In</p>
-              <p class="login__text">Sign Up</p>
-            </div>
-            <div class="bar">
-              <div class="currency">
-                <p class="currency__text">Currency :</p>
-                <div class="currency__symbol">
-                  <img
-                    src="img/512px-United-states_flag_icon_round.svg.png"
-                    alt="US Flag icon"
-                    style="width: 2rem"
-                  />
-                  <p class="currency__text currency__text--cur">USD</p>
-                </div>
-              </div>
-              <form action="#" class="search">
-                <input
-                  type="text"
-                  class="search__input"
-                  placeholder="Search entire store"
-                />
-                <a href="#" class="search__btn">
-                  <ion-icon name="search"></ion-icon>
-                </a>
-              </form>
-            </div>
-          </div>
+  <link rel="stylesheet" href="css/main.css" />
+  <title>Flower Shop</title>
+</head>
+
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header class="header">
+      <!-- Logo-area -->
+      <div class="logo-area">
+        <div class="logo">
+          <img src="img/logo.png" alt="Logo" />
         </div>
-
-        <!-- Navbar -->
-        <nav class="navbar">
-          <ul class="nav-list">
-            <li class="nav-list__nav-item">
-              <a href="#" class="nav-list__nav-link nav-list__nav-link--active"
-                >Home</a
-              >
-            </li>
-            <li class="nav-list__nav-item dropdown">
-              <a href="#" class="nav-list__nav-link" id="dropdown-btn"
-                >Dropdown</a
-              >
-              <!-- Dropdown Menu -->
-              <div class="dropdown-menu" id="dropdown-menu">
-                <ul class="menu-list">
-                  <li class="menu-list__item">
-                    <a href="#" class="menu-list__link">Link 1</a>
-                  </li>
-                  <li class="menu-list__item">
-                    <a href="#" class="menu-list__link">Link 2</a>
-                  </li>
-                  <li class="menu-list__item">
-                    <a href="#" class="menu-list__link">Link 3</a>
-                  </li>
-                </ul>
-              </div>
-            </li>
-            <li class="nav-list__nav-item">
-              <a href="#" class="nav-list__nav-link">Bookmark</a>
-            </li>
-            <li class="nav-list__nav-item">
-              <a href="#" class="nav-list__nav-link">Sitemap</a>
-            </li>
-            <li class="nav-list__nav-item">
-              <a
-                href="#"
-                class="nav-list__nav-link nav-list__nav-link--last-child"
-                >Contact</a
-              >
-            </li>
-          </ul>
-        </nav>
-
-        <!-- Banner -->
-        <div class="banner">
-          <img src="img/banner.png" alt="Banner" class="banner__img" />
-          <div class="banner__phrase">
-            <h1
-              class="heading-primary heading-primary--banner heading-primary--banner-1"
-            >
-              New
-            </h1>
-            <h1
-              class="heading-primary heading-primary--banner heading-primary--banner-2"
-            >
-              Arrivals
-            </h1>
-            <p class="banner__text">Autumn Collection</p>
-            <div class="u-align-center">
-              <a href="#" class="btn btn--banner">Shop Now</a>
-            </div>
+        <div class="info">
+          <div class="social-links">
+            <a href="#" class="social-links__icon">
+              <ion-icon name="logo-facebook"></ion-icon>
+            </a>
+            <a href="#" class="social-links__icon">
+              <ion-icon name="logo-twitter"></ion-icon>
+            </a>
+            <a href="#" class="social-links__icon">
+              <ion-icon name="logo-instagram"></ion-icon>
+            </a>
           </div>
-        </div>
-      </header>
-
-      <!-- Content -->
-      <section class="content">
-        <!-- SideBar -->
-        <aside class="sidebar">
-          <!-- SideBar - Cart -->
-          <div class="cart">
-            <div class="u-align-center">
-              <h1 class="heading-primary heading-primary--cart">Cart</h1>
-            </div>
-            <div class="cart__details">
-              <h3 class="heading-tertiary heading-tertiary--cart">
-                No products
-              </h3>
-              <p class="down-arrow">&#x25BC;</p>
-            </div>
-            <div class="cart__info">
-              <div class="cart__info-item">
-                <p class="cart__info-text cart__info-text--desc">Total</p>
-                <p class="cart__info-text cart__info-text--price">$0.00</p>
-              </div>
-              <div class="cart__info-item">
-                <p class="cart__info-text cart__info-text--desc">Shipping</p>
-                <p class="cart__info-text cart__info-text--price">$0.00</p>
-              </div>
-              <div class="cart__buttons">
-                <a href="#" class="btn btn--cart">Cart</a>
-                <a href="#" class="btn btn--cart">Checkout</a>
+          <div class="login">
+            <p class="login__text">Log In</p>
+            <p class="login__text">Sign Up</p>
+          </div>
+          <div class="bar">
+            <div class="currency">
+              <p class="currency__text">Currency :</p>
+              <div class="currency__symbol">
+                <img src="img/512px-United-states_flag_icon_round.svg.png" alt="US Flag icon" style="width: 2rem" />
+                <p class="currency__text currency__text--cur">USD</p>
               </div>
             </div>
-          </div>
-
-          <!-- SideBar - Categories -->
-          <div class="categories">
-            <div class="u-align-center">
-              <h1 class="heading-primary">
-                Categories
-              </h1>
-            </div>
-            <ul class="categories-list">
-              <li class="categories-list__item">&gt; Anniversary</li>
-              <li class="categories-list__item">&gt; Birthday Flowers</li>
-              <li class="categories-list__item">&gt; Congratulations</li>
-              <li class="categories-list__item">&gt; Corporate</li>
-              <li class="categories-list__item">&gt; Family Flowers</li>
-              <li class="categories-list__item">&gt; Flowers Gift</li>
-              <li class="categories-list__item">&gt; Funeral Flowers</li>
-              <li class="categories-list__item">&gt; Get Well Flowers</li>
-              <li class="categories-list__item">&gt; Love Flowers</li>
-              <li class="categories-list__item">&gt; Mixed Fresh Bouquets</li>
-              <li class="categories-list__item">&gt; Most Popular</li>
-              <li class="categories-list__item">&gt; New Baby Bouquets</li>
-              <li class="categories-list__item">&gt; Sympathy Gifts</li>
-              <li class="categories-list__item">&gt; Weekly Flowers</li>
-            </ul>
-          </div>
-        </aside>
-
-        <!-- Main -->
-        <main class="main">
-          <div class="images-container">
-            <div class="images-container__item">
-              <img
-                src="img/1.png"
-                alt="Flower 1"
-                class="images-container__image"
-              />
-            </div>
-            <div class="images-container__item">
-              <img
-                src="img/2.png"
-                alt="Flower 2"
-                class="images-container__image"
-              />
-            </div>
-            <div class="images-container__item">
-              <img
-                src="img/3.png"
-                alt="Flower 3"
-                class="images-container__image"
-              />
-            </div>
-            <div class="images-container__item">
-              <img
-                src="img/4.png"
-                alt="Flower 4"
-                class="images-container__image"
-              />
-            </div>
-            <div class="images-container__item">
-              <img
-                src="img/5.png"
-                alt="Flower 5"
-                class="images-container__image"
-              />
-            </div>
-            <div class="images-container__item">
-              <img
-                src="img/6.png"
-                alt="Flower 6"
-                class="images-container__image"
-              />
-            </div>
-            <div class="images-container__item">
-              <img
-                src="img/7.png"
-                alt="Flower 7"
-                class="images-container__image"
-              />
-            </div>
-            <div class="images-container__item">
-              <img
-                src="img/8.png"
-                alt="Flower 8"
-                class="images-container__image"
-              />
-            </div>
-            <div class="images-container__item">
-              <img
-                src="img/9.png"
-                alt="Flower 9"
-                class="images-container__image"
-              />
-            </div>
-          </div>
-        </main>
-      </section>
-
-      <!-- Footer -->
-      <footer class="footer">
-        <div class="copyright">
-          <p class="copyright__text">&copy; 2019 PrestaShop</p>
-        </div>
-        <ul class="footer-links">
-          <li class="footer-links__item">
-            <a href="#" class="footer-links__link">Specials</a>
-          </li>
-          <li class="footer-links__item">
-            <a href="#" class="footer-links__link">New Products</a>
-          </li>
-          <li class="footer-links__item">
-            <a href="#" class="footer-links__link">Top Sellers</a>
-          </li>
-          <li class="footer-links__item">
-            <a href="#" class="footer-links__link">Terms & Conditions</a>
-          </li>
-          <li class="footer-links__item">
-            <a href="#" class="footer-links__link">Contact us</a>
-          </li>
-          <li class="footer-links__item">
-            <a href="#" class="footer-links__link">About us</a>
-          </li>
-        </ul>
-      </footer>
-    </div>
-
-    <!-- Backdrop -->
-    <div class="backdrop panel" onclick="modalClose()">
-    </div>
-
-    <!-- Modal -->
-    <div class="modal panel">
-      <div class="modal-flower">
-        <div class="modal-flower__item">
-          <div class="modal-flower__image" id="modal-flower__image"></div>
-        </div>
-        <div class="modal-flower__item modal-flower__item--2">
-          <div class="modal-flower__typos">
-            <h1 class="heading-primary heading-primary--modal">This Flower</h1>
-            <h2 class="heading-secondary heading-secondary--modal">$44</h2>
-            <p class="modal-flower__text">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta
-              cupiditate error hic quo dignissimos rem mollitia. Vero molestiae
-              temporibus pariatur hic dicta veritatis iste quidem, illum
-              sapiente aperiam officia qui.
-            </p>
-          </div>
-          <div class="modal-flower__buttons">
-            <a href="" class="btn btn--modal">Buy Now</a>
-            <div class="btn btn--modal btn--modal-2" onclick="modalClose()">Close</div>
+            <form action="#" class="search">
+              <input type="text" class="search__input" placeholder="Search entire store" />
+              <a href="#" class="search__btn">
+                <ion-icon name="search"></ion-icon>
+              </a>
+            </form>
           </div>
         </div>
       </div>
+
+      <!-- Navbar -->
+      <nav class="navbar">
+        <ul class="nav-list">
+          <li class="nav-list__nav-item">
+            <a href="#" class="nav-list__nav-link nav-list__nav-link--active">Home</a>
+          </li>
+          <li class="nav-list__nav-item dropdown">
+            <a href="#" class="nav-list__nav-link" id="dropdown-btn">Dropdown</a>
+            <!-- Dropdown Menu -->
+            <div class="dropdown-menu" id="dropdown-menu">
+              <ul class="menu-list">
+                <li class="menu-list__item">
+                  <a href="#" class="menu-list__link">Link 1</a>
+                </li>
+                <li class="menu-list__item">
+                  <a href="#" class="menu-list__link">Link 2</a>
+                </li>
+                <li class="menu-list__item">
+                  <a href="#" class="menu-list__link">Link 3</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-list__nav-item">
+            <a href="#" class="nav-list__nav-link">Bookmark</a>
+          </li>
+          <li class="nav-list__nav-item">
+            <a href="#" class="nav-list__nav-link">Sitemap</a>
+          </li>
+          <li class="nav-list__nav-item">
+            <a href="#" class="nav-list__nav-link nav-list__nav-link--last-child">Contact</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Banner -->
+      <div class="banner">
+        <img src="img/banner.png" alt="Banner" class="banner__img" />
+        <div class="banner__phrase">
+          <h1 class="heading-primary heading-primary--banner heading-primary--banner-1">
+            New
+          </h1>
+          <h1 class="heading-primary heading-primary--banner heading-primary--banner-2">
+            Arrivals
+          </h1>
+          <p class="banner__text">Autumn Collection</p>
+          <div class="u-align-center">
+            <a href="#" class="btn btn--banner">Shop Now</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Content -->
+    <section class="content">
+      <!-- SideBar -->
+      <aside class="sidebar">
+        <!-- SideBar - Cart -->
+        <div class="cart">
+          <div class="u-align-center">
+            <h1 class="heading-primary heading-primary--cart">Cart</h1>
+          </div>
+          <div class="cart__details">
+            <h3 class="heading-tertiary heading-tertiary--cart">
+              No products
+            </h3>
+            <p class="down-arrow">&#x25BC;</p>
+          </div>
+          <div class="cart__info">
+            <div class="cart__info-item">
+              <p class="cart__info-text cart__info-text--desc">Total</p>
+              <p class="cart__info-text cart__info-text--price">$0.00</p>
+            </div>
+            <div class="cart__info-item">
+              <p class="cart__info-text cart__info-text--desc">Shipping</p>
+              <p class="cart__info-text cart__info-text--price">$0.00</p>
+            </div>
+            <div class="cart__buttons">
+              <a href="#" class="btn btn--cart">Cart</a>
+              <a href="#" class="btn btn--cart">Checkout</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- SideBar - Categories -->
+        <div class="categories">
+          <div class="u-align-center">
+            <h1 class="heading-primary">
+              Categories
+            </h1>
+          </div>
+          <ul class="categories-list">
+            <li class="categories-list__item">&gt; Anniversary</li>
+            <li class="categories-list__item">&gt; Birthday Flowers</li>
+            <li class="categories-list__item">&gt; Congratulations</li>
+            <li class="categories-list__item">&gt; Corporate</li>
+            <li class="categories-list__item">&gt; Family Flowers</li>
+            <li class="categories-list__item">&gt; Flowers Gift</li>
+            <li class="categories-list__item">&gt; Funeral Flowers</li>
+            <li class="categories-list__item">&gt; Get Well Flowers</li>
+            <li class="categories-list__item">&gt; Love Flowers</li>
+            <li class="categories-list__item">&gt; Mixed Fresh Bouquets</li>
+            <li class="categories-list__item">&gt; Most Popular</li>
+            <li class="categories-list__item">&gt; New Baby Bouquets</li>
+            <li class="categories-list__item">&gt; Sympathy Gifts</li>
+            <li class="categories-list__item">&gt; Weekly Flowers</li>
+          </ul>
+        </div>
+      </aside>
+
+      <!-- Main -->
+      <main class="main">
+        <div class="images-container">
+          <div class="images-container__item">
+            <img src="img/1.png" alt="Flower 1" class="images-container__image" />
+          </div>
+          <div class="images-container__item">
+            <img src="img/2.png" alt="Flower 2" class="images-container__image" />
+          </div>
+          <div class="images-container__item">
+            <img src="img/3.png" alt="Flower 3" class="images-container__image" />
+          </div>
+          <div class="images-container__item">
+            <img src="img/4.png" alt="Flower 4" class="images-container__image" />
+          </div>
+          <div class="images-container__item">
+            <img src="img/5.png" alt="Flower 5" class="images-container__image" />
+          </div>
+          <div class="images-container__item">
+            <img src="img/6.png" alt="Flower 6" class="images-container__image" />
+          </div>
+          <div class="images-container__item">
+            <img src="img/7.png" alt="Flower 7" class="images-container__image" />
+          </div>
+          <div class="images-container__item">
+            <img src="img/8.png" alt="Flower 8" class="images-container__image" />
+          </div>
+          <div class="images-container__item">
+            <img src="img/9.png" alt="Flower 9" class="images-container__image" />
+          </div>
+        </div>
+      </main>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="copyright">
+        <p class="copyright__text">&copy; 2019 PrestaShop</p>
+      </div>
+      <ul class="footer-links">
+        <li class="footer-links__item">
+          <a href="#" class="footer-links__link">Specials</a>
+        </li>
+        <li class="footer-links__item">
+          <a href="#" class="footer-links__link">New Products</a>
+        </li>
+        <li class="footer-links__item">
+          <a href="#" class="footer-links__link">Top Sellers</a>
+        </li>
+        <li class="footer-links__item">
+          <a href="#" class="footer-links__link">Terms & Conditions</a>
+        </li>
+        <li class="footer-links__item">
+          <a href="#" class="footer-links__link">Contact us</a>
+        </li>
+        <li class="footer-links__item">
+          <a href="#" class="footer-links__link">About us</a>
+        </li>
+      </ul>
+    </footer>
+  </div>
+
+  <!-- Backdrop -->
+  <div class="backdrop panel" onclick="modalClose()">
+  </div>
+
+  <!-- Modal -->
+  <div class="modal panel">
+    <div class="modal-flower">
+      <div class="modal-flower__item">
+        <div class="modal-flower__image" id="modal-flower__image"></div>
+      </div>
+      <div class="modal-flower__item modal-flower__item--2">
+        <div class="modal-flower__typos">
+          <h1 class="heading-primary heading-primary--modal">This Flower</h1>
+          <h2 class="heading-secondary heading-secondary--modal">$44</h2>
+          <p class="modal-flower__text">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta
+            cupiditate error hic quo dignissimos rem mollitia. Vero molestiae
+            temporibus pariatur hic dicta veritatis iste quidem, illum
+            sapiente aperiam officia qui.
+          </p>
+        </div>
+        <div class="modal-flower__buttons">
+          <a href="" class="btn btn--modal">Buy Now</a>
+          <div class="btn btn--modal btn--modal-2" onclick="modalClose()">Close</div>
+        </div>
+      </div>
     </div>
+  </div>
 
-    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
-    <script>
-      // Dropdown button active, hovering on menu
-      const ddMenu = document.getElementById("dropdown-menu");
-      const ddBtn = document.getElementById("dropdown-btn");
+  <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+  <script>
+    // Dropdown button active, hovering on menu
+    const ddMenu = document.getElementById("dropdown-menu");
+    const ddBtn = document.getElementById("dropdown-btn");
 
-      ddMenu.onmouseover = () => {
-        ddBtn.classList.add("nav-list__nav-link--active");
-      };
-      ddMenu.onmouseout = () => {
-        ddBtn.classList.remove("nav-list__nav-link--active");
-      };
+    ddMenu.onmouseover = () => {
+      ddBtn.classList.add("nav-list__nav-link--active");
+    };
+    ddMenu.onmouseout = () => {
+      ddBtn.classList.remove("nav-list__nav-link--active");
+    };
 
-      // Modal Visibility and Image
-      const panels = document.getElementsByClassName("panel");
-      const images = document.getElementsByClassName("images-container__image");
-      const modalImage = document.getElementById("modal-flower__image");
+    // Modal Visibility and Image
+    const panels = document.getElementsByClassName("panel");
+    const images = document.getElementsByClassName("images-container__image");
+    const modalImage = document.getElementById("modal-flower__image");
 
-      for (let i in images) {
-        images[i].onclick = () => {
-          let imgURL = "url('" + images[i].getAttribute("src") + "')";
-          modalImage.style.backgroundImage = imgURL;
-          for (let v in panels) {
-            panels[v].classList.add("u-show");
-          }
-        };
-      }
-
-      // Modal Close
-      const modalClose = () => {
+    for (let i in images) {
+      images[i].onclick = () => {
+        let imgURL = "url('" + images[i].getAttribute("src") + "')";
+        modalImage.style.backgroundImage = imgURL;
         for (let v in panels) {
-          panels[v].classList.remove("u-show");
+          panels[v].classList.add("u-show");
         }
       };
-    </script>
-  </body>
+    }
+
+    // Modal Close
+    const modalClose = () => {
+      for (let v in panels) {
+        panels[v].classList.remove("u-show");
+      }
+    };
+  </script>
+</body>
+
 </html>
