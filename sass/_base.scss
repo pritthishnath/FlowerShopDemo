@@ -1,0 +1,28 @@
+$color-primary-light: #ff44ef;
+$color-primary: #b900aa;
+$color-primary-dark-1: #940088;
+$color-primary-dark-2: #63005a;
+
+$color-grey-light-2: #ececec;
+$color-grey-light-1: #cccccc;
+$color-grey: #a5a5a5;
+$color-grey-dark-1: #818181;
+$color-grey-dark-2: #464646;
+
+$color-white: #ffffff;
+$color-black: #000000;
+
+$borer-radius-small: 3px;
+$border-radius-medium: 5px;
+$border-radius-large: 1rem;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}

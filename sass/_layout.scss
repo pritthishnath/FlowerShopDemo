@@ -1,0 +1,54 @@
+body {
+  background-image: url("../img/back.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-width: 130.5rem;
+}
+
+.container {
+  background-color: $color-grey-light-2;
+  margin: 5rem 10rem 0;
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.8);
+}
+
+.header {
+  background-image: linear-gradient(
+    to right bottom,
+    $color-primary,
+    $color-primary-dark-2
+  );
+  position: relative;
+}
+.navbar {
+  background-color: $color-grey-light-2;
+  z-index: 2;
+}
+
+.content {
+  background-color: $color-white;
+  display: flex;
+}
+
+.sidebar {
+  flex: 0 0 27%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.main {
+  flex: 0 0 73%;
+}
+
+.footer {
+  background-image: linear-gradient(
+    to right,
+    $color-primary,
+    $color-primary-dark-2
+  );
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
