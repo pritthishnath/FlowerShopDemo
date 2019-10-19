@@ -631,6 +631,9 @@
 .copyright {
   padding-left: 2rem;
   color: $color-grey-light-2;
+  @include respond(tab-port) {
+    padding: 2rem 0;
+  }
   &__text {
     font-weight: 700;
     letter-spacing: 0.1rem;

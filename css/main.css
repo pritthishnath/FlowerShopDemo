@@ -756,6 +756,12 @@ html {
   color: #ececec;
 }
 
+@media (max-width: 56.25em) {
+  .copyright {
+    padding: 2rem 0;
+  }
+}
+
 .copyright__text {
   font-weight: 700;
   letter-spacing: 0.1rem;
