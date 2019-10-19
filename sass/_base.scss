@@ -24,5 +24,15 @@ $border-radius-large: 1rem;
 
 html {
   box-sizing: border-box;
-  font-size: 62.5%;
+  font-size: 62.5%; //1rem = 10px
+
+  @include respond(tab-land) {
+    font-size: 56.25%; //1rem = 9px
+  }
+  // @include respond(tab-port) {
+  //   font-size: 56.25%; //1rem = 8px
+  // }
+  // @include respond(phone) {
+  //   font-size: 30%; //1rem = 4.8px
+  // }
 }

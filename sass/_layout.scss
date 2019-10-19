@@ -2,13 +2,18 @@ body {
   background-image: url("../img/back.jpg");
   // background-repeat: no-repeat;
   background-size: cover;
-  min-width: 130.5rem;
+  // width: 130.5rem;
 }
 
 .container {
   background-color: $color-grey-light-2;
   margin: 5rem 10rem 0;
   box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.8);
+
+  @include respond(tab-port) {
+    margin: 0;
+    width: 100%;
+  }
 }
 
 .header {
@@ -19,14 +24,40 @@ body {
   );
   position: relative;
 }
+
+.header-area {
+  padding: 0.5rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @include respond(tab-port) {
+    padding: 1rem;
+    height: 7rem;
+  }
+}
+
 .navbar {
   background-color: $color-grey-light-2;
   z-index: 2;
+  @include respond(tab-port) {
+    z-index: 25;
+    position: fixed;
+    width: 0;
+    height: 100vh;
+    margin-top: -7rem;
+    display: block;
+    transition: all 0.5s ease-out;
+  }
 }
 
 .content {
   background-color: $color-white;
   display: flex;
+
+  @include respond(tab-port) {
+    display: block;
+  }
 }
 
 .sidebar {
@@ -35,6 +66,10 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+
+  @include respond(tab-port) {
+    display: none;
+  }
 }
 
 .main {
@@ -51,4 +86,8 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @include respond(tab-port) {
+    flex-direction: column-reverse;
+  }
 }

@@ -17,9 +17,16 @@
     <!-- Header -->
     <header class="header">
       <!-- Logo-area -->
-      <div class="logo-area">
+      <input type="checkbox" class="checkbox-nav" id="nav-input" onclick="check()">
+      <div class="header-area">
+        <div class="nav-btn">
+
+          <label for="nav-input" class="nav-btn__label">
+            <span class="nav-btn__icon">&nbsp;</span>
+          </label>
+        </div>
         <div class="logo">
-          <img src="img/logo.png" alt="Logo" />
+          <img src="img/logo.png" alt="Logo" class="logo__icon" />
         </div>
         <div class="info">
           <div class="social-links">
@@ -53,10 +60,16 @@
             </form>
           </div>
         </div>
+        <div class="responsive-search-btn">
+          <a href="#" class="responsive-search-btn__icon">
+            <ion-icon name="search"></ion-icon>
+          </a>
+        </div>
       </div>
 
       <!-- Navbar -->
-      <nav class="navbar">
+      <nav class="navbar panel">
+
         <ul class="nav-list">
           <li class="nav-list__nav-item">
             <a href="#" class="nav-list__nav-link nav-list__nav-link--active">Home</a>
@@ -92,7 +105,7 @@
 
       <!-- Banner -->
       <div class="banner">
-        <img src="img/banner.png" alt="Banner" class="banner__img" />
+        <!-- <img src="img/banner.png" alt="Banner" class="banner__img" /> -->
         <div class="banner__phrase">
           <h1 class="heading-primary heading-primary--banner heading-primary--banner-1">
             New
@@ -228,7 +241,7 @@
   </div>
 
   <!-- Backdrop -->
-  <div class="backdrop panel" onclick="modalClose()">
+  <div class="backdrop panel" onclick="modalClose()" id="backdrop">
   </div>
 
   <!-- Modal -->
@@ -256,7 +269,7 @@
     </div>
   </div>
 
-  <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+  <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.js"></script>
   <script>
     // Dropdown button active, hovering on menu
     const ddMenu = document.getElementById("dropdown-menu");
@@ -271,22 +284,32 @@
 
     // Modal Visibility and Image
     const panels = document.getElementsByClassName("panel");
+    const backdrop = document.getElementById("backdrop");
     const images = document.getElementsByClassName("images-container__image");
     const modalImage = document.getElementById("modal-flower__image");
 
-    for (let i in images) {
+    for (let i = 0; i < images.length; i++) {
       images[i].onclick = () => {
         let imgURL = "url('" + images[i].getAttribute("src") + "')";
         modalImage.style.backgroundImage = imgURL;
-        for (let v in panels) {
+        for (let v = 0; v < panels.length; v++) {
           panels[v].classList.add("u-show");
         }
       };
     }
 
+    const navCheckBox = document.getElementById("nav-input");
+
+    const check = () => {
+      if (navCheckBox.checked == true) {
+        backdrop.classList.add("u-show");
+      }
+    }
+
     // Modal Close
     const modalClose = () => {
-      for (let v in panels) {
+      navCheckBox.checked = false;
+      for (let v = 0; v < panels.length; v++) {
         panels[v].classList.remove("u-show");
       }
     };

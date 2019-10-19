@@ -1,24 +1,61 @@
 /////////////////// LOGO AREA
-.logo-area {
-  padding: 0.5rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.checkbox-nav {
+  display: none;
 }
 
 .logo {
-  padding: 1rem;
+  padding: 0.5rem;
   margin-left: 1rem;
+  // background-color: orange;
+
+  &__icon {
+    @include respond(tab-land) {
+      width: 32rem;
+    }
+    @include respond(tab-port) {
+      margin-top: 1rem;
+    }
+    // @include respond(phone) {
+    //   width: 30rem;
+    // }
+  }
+}
+
+.responsive-search-btn {
+  display: none;
+  @include respond(tab-port) {
+    display: block;
+    padding: 1rem 2rem;
+    border: 2px solid $color-grey-light-1;
+    border-radius: $border-radius-large;
+    cursor: pointer;
+    transition: all 0.3s;
+    &:hover {
+      border: 2px solid $color-white;
+      background-color: $color-white;
+    }
+    &:hover &__icon {
+      color: $color-primary-dark-2;
+    }
+    &__icon {
+      color: $color-grey-light-1;
+      margin-top: 0.5rem;
+      display: block;
+      transform: scale(2);
+    }
+  }
 }
 
 .info {
   flex: 1 0 auto;
-  // background-color: orange;
-
+  // background-color: orangered;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-end;
+  @include respond(tab-port) {
+    display: none;
+  }
 }
 
 .social-links {
@@ -123,25 +160,120 @@
   }
 }
 
+/////////////////// NAV BUTTON
+.nav-btn {
+  display: none;
+  // margin-left: 1rem;
+  @include respond(tab-port) {
+    display: block;
+
+    &__label {
+      display: block;
+      height: 4rem;
+      width: 4rem;
+      // box-shadow: 0 1rem 2rem rgba($color-black, 0.5);
+      cursor: pointer;
+    }
+
+    &__icon {
+      position: relative;
+      margin-left: 1.8rem;
+      margin-top: 2rem;
+      &,
+      &::before,
+      &::after {
+        display: inline-block;
+        height: 2px;
+        width: 2.5rem;
+        background-color: $color-grey-dark-2;
+        position: absolute;
+        left: 0;
+        transition: all 0.3s;
+      }
+
+      &::before,
+      &::after {
+        content: "";
+      }
+
+      &::before {
+        top: -0.8rem;
+      }
+      &::after {
+        top: 0.8rem;
+      }
+    }
+    &__label:hover &__icon {
+      background-color: $color-white;
+    }
+    &__label:hover &__icon::before {
+      background-color: $color-white;
+    }
+    &__label:hover &__icon::after {
+      background-color: $color-white;
+    }
+  }
+}
+
+//////////////////// NAV-CHECKBOX FUNCTIONALITY
+@include respond(tab-port) {
+  .checkbox-nav:checked ~ .navbar {
+    width: 65%;
+  }
+  .checkbox-nav:checked ~ .navbar > .nav-list > .nav-list__nav-item {
+    width: 90%;
+  }
+  .checkbox-nav:checked
+    ~ .navbar
+    > .nav-list
+    > .nav-list__nav-item
+    > .nav-list__nav-link {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
 /////////////////// NAV LIST
 .nav-list {
   display: flex;
   list-style: none;
   font-weight: 700;
+  @include respond(tab-port) {
+    flex-direction: column;
+    font-weight: 900;
+    background-color: inherit;
+  }
 
   &__nav-item {
     width: 14rem;
     text-align: center;
     font-size: 1.6rem;
     cursor: pointer;
+    backface-visibility: hidden;
+    @include respond(tab-port) {
+      &:nth-child(2) {
+        display: none;
+      }
+      width: 0;
+      font-size: 2.5rem;
+      letter-spacing: 2px;
+      text-align: left;
+      margin: 1rem 0;
+      margin-left: 5%;
+      transition: all 0.4s ease-out;
+    }
   }
 
   &__nav-item:hover &__nav-link {
     margin: 0;
     padding: 1rem 0;
+    @include respond(tab-port) {
+      padding-left: 2rem;
+    }
   }
 
   &__nav-link {
+    &,
     &:link,
     &:visited {
       text-decoration: none;
@@ -150,11 +282,18 @@
       display: block;
       transition: all 0.3s ease-out;
       border-right: 2px solid $color-grey;
+      @include border-none-tab-port;
+      @include respond(tab-port) {
+        visibility: hidden;
+        opacity: 0;
+        padding-left: 2rem;
+      }
     }
     &--last-child {
       &:link,
       &:visited {
         border-right: 2px solid transparent;
+        @include border-none-tab-port;
       }
     }
     &--active {
@@ -165,12 +304,17 @@
         background-color: $color-primary-dark-2;
         color: $color-grey-light-2;
         border-right: 2px solid $color-primary-dark-2;
+        @include border-none-tab-port;
+        @include respond(tab-port) {
+          padding-left: 2rem;
+        }
       }
     }
     &:hover {
       background-color: $color-primary-dark-2;
       color: $color-grey-light-2;
       border-right: 2px solid $color-primary-dark-2;
+      @include border-none-tab-port;
     }
   }
 }
@@ -178,7 +322,7 @@
 /////////////////// DROPDOWN MENU
 .dropdown-menu {
   position: absolute;
-  top: 15.2rem;
+  top: 14.15rem;
   left: 14rem;
   background-color: $color-primary-light;
   width: 14rem;
@@ -226,7 +370,27 @@
 
 /////////////////// BANNER
 .banner {
+  background-image: url(../img/banner.png);
+  background-size: cover;
+  background-repeat: no-repeat;
   position: relative;
+  width: 100%;
+  height: 40rem;
+  overflow: hidden;
+
+  @include respond(tab-land) {
+    background-size: 150%;
+  }
+  @include respond(phone) {
+    background-size: 200%;
+    height: 35rem;
+    background-image: radial-gradient(
+        $color-primary-dark-1,
+        rgba($color-primary, 0.2)
+      ),
+      url(../img/banner.png);
+  }
+
   &__phrase {
     position: absolute;
     top: 11rem;
@@ -234,6 +398,19 @@
     width: 24%;
 
     // background-color: orange;
+    @include respond(tab-land) {
+      // display: none;
+      width: auto;
+      top: 10%;
+      right: 7%;
+      padding: 4rem;
+      border-radius: 50%;
+      background-color: rgba($color-primary-dark-1, 0.8);
+    }
+
+    @include respond(phone) {
+      background-color: transparent;
+    }
   }
 
   &__text {
@@ -242,9 +419,6 @@
     color: $color-grey-light-1;
     margin-left: 0.4rem;
     text-align: center;
-  }
-  &__img {
-    width: 100%;
   }
 }
 
@@ -331,23 +505,21 @@
 }
 
 /////////////////// BUTTONS
-@mixin btn {
-  text-decoration: none;
-  display: inline-block;
-  background-color: $color-primary-dark-1;
-  color: $color-grey-light-2;
-  padding: 1rem;
-  border-radius: $border-radius-medium;
-  font-weight: 700;
-  backface-visibility: hidden;
 
-  transition: all 0.3s;
-}
 .btn {
-  @include btn;
+  &,
   &:link,
   &:visited {
-    @include btn;
+    text-decoration: none;
+    display: inline-block;
+    background-color: $color-primary-dark-1;
+    color: $color-grey-light-2;
+    padding: 1rem;
+    border-radius: $border-radius-medium;
+    font-weight: 700;
+    backface-visibility: hidden;
+
+    transition: all 0.3s;
   }
 
   &:hover {
@@ -361,6 +533,7 @@
   }
 
   &--cart {
+    &,
     &:link,
     &:visited {
       margin: 0.5rem;
@@ -368,14 +541,19 @@
   }
 
   &--banner {
+    &,
     &:link,
     &:visited {
       margin: 0.5rem;
+      margin-top: 2rem;
       padding: 1.3rem;
       background-color: $color-grey-light-2;
       font-size: 2rem;
       color: $color-primary-dark-2;
       border-radius: $border-radius-large;
+      @include respond(tab-land) {
+        font-size: 2.5rem;
+      }
     }
 
     &:hover {
@@ -385,35 +563,30 @@
     }
   }
 
-  @mixin btn--modal {
-    width: 15rem;
-    margin: 1rem;
-    margin-bottom: 0;
-    padding: 1.5rem;
-    font-size: 2.5rem;
-    text-align: center;
-    border-radius: 100px;
-    background-color: rgba($color-primary, 0.9);
-  }
   &--modal {
-    @include btn--modal;
+    &,
     &:link,
     &:visited {
-      @include btn--modal;
+      width: 15rem;
+      margin: 1rem;
+      margin-bottom: 0;
+      padding: 1.5rem;
+      font-size: 2.5rem;
+      text-align: center;
+      border-radius: 100px;
+      background-color: rgba($color-primary, 0.9);
     }
     &:hover {
       background-color: $color-primary-dark-1;
     }
-    @mixin btn--modal-2 {
-      background-color: rgba($color-black, 0.2);
-      color: rgba($color-black, 0.7);
-      cursor: pointer;
-    }
+
     &-2 {
-      @include btn--modal-2;
+      &,
       &:link,
       &:visited {
-        @include btn--modal-2;
+        background-color: rgba($color-black, 0.2);
+        color: rgba($color-black, 0.7);
+        cursor: pointer;
       }
       &:hover {
         background-color: rgba($color-black, 0.3);
@@ -469,9 +642,24 @@
   padding: 1rem 0;
   display: flex;
 
+  // background-color: orange;
+
+  @include respond(tab-port) {
+    height: 12rem;
+    width: 100%;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: space-around;
+  }
+
   &__item {
     padding: 0.5rem;
     display: block;
+    // background-color: orangered;
+    @include respond(tab-port) {
+      width: 30%;
+    }
   }
 
   &__link {
