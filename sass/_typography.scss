@@ -23,9 +23,9 @@ body {
       margin-bottom: 0;
       margin-left: 3rem;
       color: $color-primary-light;
-      // @include respond(phone) {
-      //   margin-left: 10rem;
-      // }
+      @include respond(phone) {
+        margin-left: 0;
+      }
     }
     &-2 {
       margin-top: -1rem;

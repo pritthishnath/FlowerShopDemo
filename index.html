@@ -18,9 +18,9 @@
     <header class="header">
       <!-- Logo-area -->
       <input type="checkbox" class="checkbox-nav" id="nav-input" onclick="check()">
+      <input type="checkbox" class="checkbox-search" id="res-search-btn" onclick="check()">
       <div class="header-area">
         <div class="nav-btn">
-
           <label for="nav-input" class="nav-btn__label">
             <span class="nav-btn__icon">&nbsp;</span>
           </label>
@@ -46,10 +46,10 @@
           </div>
           <div class="bar">
             <div class="currency">
-              <p class="currency__text">Currency :</p>
+              <p class="currency__text">Country :</p>
               <div class="currency__symbol">
                 <img src="img/512px-United-states_flag_icon_round.svg.png" alt="US Flag icon" style="width: 2rem" />
-                <p class="currency__text currency__text--cur">USD</p>
+                <p class="currency__text currency__text--cur">USA</p>
               </div>
             </div>
             <form action="#" class="search">
@@ -61,9 +61,13 @@
           </div>
         </div>
         <div class="responsive-search-btn">
-          <a href="#" class="responsive-search-btn__icon">
-            <ion-icon name="search"></ion-icon>
-          </a>
+          <div class="responsive-search-btn__icon">
+            <button type="button" class="responsive-search-btn__btn" onclick="getFocus()">
+              <label for="res-search-btn" class="responsive-search-btn__label">
+                <ion-icon name="search"></ion-icon>
+              </label>
+            </button>
+          </div>
         </div>
       </div>
 
@@ -98,7 +102,13 @@
             <a href="#" class="nav-list__nav-link">Sitemap</a>
           </li>
           <li class="nav-list__nav-item">
-            <a href="#" class="nav-list__nav-link nav-list__nav-link--last-child">Contact</a>
+            <a href="#" class="nav-list__nav-link nav-list__nav-link--contact">Contact</a>
+          </li>
+          <li class="nav-list__nav-item">
+            <a href="#" class="nav-list__nav-link nav-list__nav-link--country">Country: <img
+                src="img/512px-United-states_flag_icon_round.svg.png" alt="US Flag icon"
+                style="width: 3rem; margin-bottom: -.5rem;" /> USA
+            </a>
           </li>
         </ul>
       </nav>
@@ -107,7 +117,7 @@
       <div class="banner">
         <!-- <img src="img/banner.png" alt="Banner" class="banner__img" /> -->
         <div class="banner__phrase">
-          <h1 class="heading-primary heading-primary--banner heading-primary--banner-1">
+          <h1 class="heading-primary heading-primary--banner heading-primary--banner-1" id="banner-h1-1">
             New
           </h1>
           <h1 class="heading-primary heading-primary--banner heading-primary--banner-2">
@@ -118,6 +128,9 @@
             <a href="#" class="btn btn--banner">Shop Now</a>
           </div>
         </div>
+      </div>
+      <div class="responsive-search">
+        <input type="text" class="responsive-search__input" placeholder="Search entire store" id="res-search">
       </div>
     </header>
 
@@ -217,6 +230,17 @@
       <div class="copyright">
         <p class="copyright__text">&copy; 2019 PrestaShop</p>
       </div>
+      <div class="social-links social-links--footer">
+        <a href="#" class="social-links__icon">
+          <ion-icon name="logo-facebook"></ion-icon>
+        </a>
+        <a href="#" class="social-links__icon">
+          <ion-icon name="logo-twitter"></ion-icon>
+        </a>
+        <a href="#" class="social-links__icon">
+          <ion-icon name="logo-instagram"></ion-icon>
+        </a>
+      </div>
       <ul class="footer-links">
         <li class="footer-links__item">
           <a href="#" class="footer-links__link">Specials</a>
@@ -257,8 +281,7 @@
           <p class="modal-flower__text">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta
             cupiditate error hic quo dignissimos rem mollitia. Vero molestiae
-            temporibus pariatur hic dicta veritatis iste quidem, illum
-            sapiente aperiam officia qui.
+            temporibus pariatur hic dicta veritatis iste quidem
           </p>
         </div>
         <div class="modal-flower__buttons">
@@ -299,20 +322,42 @@
     }
 
     const navCheckBox = document.getElementById("nav-input");
+    const resSearchBtn = document.getElementById("res-search-btn");
+    const resSearchInput = document.getElementById("res-search");
 
     const check = () => {
-      if (navCheckBox.checked == true) {
+      if (navCheckBox.checked == true || resSearchBtn.checked == true) {
         backdrop.classList.add("u-show");
       }
     }
 
+    const getFocus = () => {
+      resSearchInput.focus();
+    }
     // Modal Close
     const modalClose = () => {
       navCheckBox.checked = false;
+      resSearchBtn.checked = false;
       for (let v = 0; v < panels.length; v++) {
         panels[v].classList.remove("u-show");
       }
     };
+
+    // MEDIA QUERIES
+    const phoneWidth = window.matchMedia("(max-width: 600px)");
+
+    const bannerHeading1 = document.getElementById("banner-h1-1");
+
+    const respondPhone = (p) => {
+      if (p.matches) {
+        bannerHeading1.classList.add("u-align-center");
+      } else {
+        bannerHeading1.classList.remove("u-align-center");
+      }
+    }
+
+    respondPhone(phoneWidth);
+    phoneWidth.addListener(respondPhone);
   </script>
 </body>
 
