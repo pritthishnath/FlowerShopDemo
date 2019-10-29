@@ -68,7 +68,7 @@
     background-image: inherit;
     width: 0;
     padding: 1.5rem 10rem;
-    visibility: collapse;
+    // visibility: hidden;
     opacity: 0;
     z-index: 15;
     transition: all 0.2s ease-out;
@@ -81,11 +81,27 @@
       border-radius: 30px;
       padding: 0.7rem 2rem;
       width: 100%;
+      margin-right: -5rem;
       transition: all 0.1s ease-out;
 
       &:focus {
         outline: none;
         background-color: $color-white;
+      }
+    }
+
+    &__btn {
+      transform: scale(1.5);
+      color: $color-grey-dark-1;
+      background-color: transparent;
+      margin-top: 1rem;
+      padding: 0 1rem;
+      border: none;
+      cursor: pointer;
+      &:focus,
+      &:active {
+        outline: none;
+        background-color: transparent;
       }
     }
   }
@@ -407,8 +423,8 @@
 /////////////////// DROPDOWN MENU
 .dropdown-menu {
   position: absolute;
-  top: 14.15rem;
-  left: 14rem;
+  top: 19.2rem;
+  left: 24rem;
   background-color: $color-primary-light;
   width: 14rem;
   font-weight: 400;
@@ -820,7 +836,7 @@
   align-items: center;
 
   @include respond(phone) {
-    width: 48rem;
+    width: 43rem;
     height: 45rem;
     padding: 0 0.5rem;
   }

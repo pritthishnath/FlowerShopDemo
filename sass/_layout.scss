@@ -7,8 +7,14 @@ body {
 
 .container {
   background-color: $color-grey-light-2;
-  margin: 5rem 10rem 0;
+  margin: 5rem auto 0;
+  width: 114.9rem;
   box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.8);
+
+  @include respond(tab-land) {
+    width: auto;
+    margin: 5rem 10rem 0;
+  }
 
   @include respond(tab-port) {
     margin: 0;

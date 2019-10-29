@@ -98,7 +98,6 @@ html {
     background-image: inherit;
     width: 0;
     padding: 1.5rem 10rem;
-    visibility: collapse;
     opacity: 0;
     z-index: 15;
     -webkit-transition: all 0.2s ease-out;
@@ -113,12 +112,27 @@ html {
     border-radius: 30px;
     padding: 0.7rem 2rem;
     width: 100%;
+    margin-right: -5rem;
     -webkit-transition: all 0.1s ease-out;
     transition: all 0.1s ease-out;
   }
   .responsive-search__input:focus {
     outline: none;
     background-color: #ffffff;
+  }
+  .responsive-search__btn {
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+    color: #818181;
+    background-color: transparent;
+    margin-top: 1rem;
+    padding: 0 1rem;
+    border: none;
+    cursor: pointer;
+  }
+  .responsive-search__btn:focus, .responsive-search__btn:active {
+    outline: none;
+    background-color: transparent;
   }
 }
 
@@ -503,8 +517,8 @@ html {
 
 .dropdown-menu {
   position: absolute;
-  top: 14.15rem;
-  left: 14rem;
+  top: 19.2rem;
+  left: 24rem;
   background-color: #ff44ef;
   width: 14rem;
   font-weight: 400;
@@ -944,7 +958,7 @@ html {
 
 @media (max-width: 37.5em) {
   .modal-flower {
-    width: 48rem;
+    width: 43rem;
     height: 45rem;
     padding: 0 0.5rem;
   }
@@ -1028,9 +1042,17 @@ body {
 
 .container {
   background-color: #ececec;
-  margin: 5rem 10rem 0;
+  margin: 5rem auto 0;
+  width: 114.9rem;
   -webkit-box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.8);
           box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.8);
+}
+
+@media (max-width: 75em) {
+  .container {
+    width: auto;
+    margin: 5rem 10rem 0;
+  }
 }
 
 @media (max-width: 56.25em) {

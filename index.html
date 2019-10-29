@@ -62,7 +62,8 @@
         </div>
         <div class="responsive-search-btn">
           <div class="responsive-search-btn__icon">
-            <button type="button" class="responsive-search-btn__btn" onclick="getFocus()">
+            <button type="button" class="responsive-search-btn__btn"
+              onclick="getFocus(document.getElementById('res-search'))">
               <label for="res-search-btn" class="responsive-search-btn__label">
                 <ion-icon name="search"></ion-icon>
               </label>
@@ -131,6 +132,9 @@
       </div>
       <div class="responsive-search">
         <input type="text" class="responsive-search__input" placeholder="Search entire store" id="res-search">
+        <button class="responsive-search__btn">
+          <ion-icon name="search"></ion-icon>
+        </button>
       </div>
     </header>
 
@@ -331,9 +335,11 @@
       }
     }
 
-    const getFocus = () => {
-      resSearchInput.focus();
+    const getFocus = (input) => {
+      input.focus();
+      console.log(resSearchInput);
     }
+
     // Modal Close
     const modalClose = () => {
       navCheckBox.checked = false;
