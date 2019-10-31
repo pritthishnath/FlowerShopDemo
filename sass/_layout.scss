@@ -8,8 +8,9 @@ body {
 .container {
   background-color: $color-grey-light-2;
   margin: 5rem auto 0;
-  width: 114.9rem;
+  max-width: 114.9rem;
   box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.8);
+  position: relative;
 
   @include respond(tab-land) {
     width: auto;

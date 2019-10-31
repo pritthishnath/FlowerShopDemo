@@ -245,6 +245,16 @@
     margin-top: 0.4rem;
     color: $color-grey-dark-1;
     transform: scale(1.1);
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s;
+    &:focus {
+      outline: none;
+    }
+    &:hover {
+      color: $color-grey-dark-2;
+    }
   }
 }
 
@@ -423,8 +433,8 @@
 /////////////////// DROPDOWN MENU
 .dropdown-menu {
   position: absolute;
-  top: 19.2rem;
-  left: 24rem;
+  top: 14.2rem;
+  left: 14rem;
   background-color: $color-primary-light;
   width: 14rem;
   font-weight: 400;

@@ -319,6 +319,19 @@ html {
   color: #818181;
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.search__btn:focus {
+  outline: none;
+}
+
+.search__btn:hover {
+  color: #464646;
 }
 
 .nav-btn {
@@ -517,8 +530,8 @@ html {
 
 .dropdown-menu {
   position: absolute;
-  top: 19.2rem;
-  left: 24rem;
+  top: 14.2rem;
+  left: 14rem;
   background-color: #ff44ef;
   width: 14rem;
   font-weight: 400;
@@ -1043,9 +1056,10 @@ body {
 .container {
   background-color: #ececec;
   margin: 5rem auto 0;
-  width: 114.9rem;
+  max-width: 114.9rem;
   -webkit-box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.8);
           box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.8);
+  position: relative;
 }
 
 @media (max-width: 75em) {
