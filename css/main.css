@@ -390,11 +390,7 @@ html {
   .checkbox-nav:checked ~ .navbar > .nav-list > .nav-list__nav-item {
     width: 90%;
   }
-  .checkbox-nav:checked
-~ .navbar
-> .nav-list
-> .nav-list__nav-item
-> .nav-list__nav-link {
+  .checkbox-nav:checked ~ .navbar > .nav-list > .nav-list__nav-item > .nav-list__nav-link {
     visibility: visible;
     opacity: 1;
   }

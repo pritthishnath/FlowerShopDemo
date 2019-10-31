@@ -2,7 +2,6 @@ body {
   background-image: url("../img/back.jpg");
   // background-repeat: no-repeat;
   background-size: cover;
-  // width: 130.5rem;
 }
 
 .container {
@@ -29,7 +28,6 @@ body {
     $color-primary,
     $color-primary-dark-2
   );
-  // position: relative;
 }
 
 .header-area {
@@ -41,7 +39,6 @@ body {
   @include respond(tab-port) {
     padding: 1rem;
     height: 7rem;
-    // position: relative;
     z-index: 15;
   }
 }

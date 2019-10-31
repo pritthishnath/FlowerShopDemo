@@ -10,7 +10,6 @@
 .logo {
   padding: 0.5rem;
   margin-left: 1rem;
-  // background-color: orange;
 
   &__icon {
     @include respond(tab-land) {
@@ -68,7 +67,6 @@
     background-image: inherit;
     width: 0;
     padding: 1.5rem 10rem;
-    // visibility: hidden;
     opacity: 0;
     z-index: 15;
     transition: all 0.2s ease-out;
@@ -123,7 +121,6 @@
 
 .info {
   flex: 1 0 auto;
-  // background-color: orangered;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -216,7 +213,6 @@
   padding: 0.2rem 0;
   padding-right: 1.8rem;
   width: 22rem;
-  // background-color: orange;
 
   display: flex;
   justify-content: flex-end;
@@ -302,12 +298,12 @@
     }
     &__label:hover &__icon {
       background-color: $color-white;
-    }
-    &__label:hover &__icon::before {
-      background-color: $color-white;
-    }
-    &__label:hover &__icon::after {
-      background-color: $color-white;
+      &::before {
+        background-color: $color-white;
+      }
+      &::after {
+        background-color: $color-white;
+      }
     }
   }
 }
@@ -316,17 +312,15 @@
 @include respond(tab-port) {
   .checkbox-nav:checked ~ .navbar {
     width: 65%;
-  }
-  .checkbox-nav:checked ~ .navbar > .nav-list > .nav-list__nav-item {
-    width: 90%;
-  }
-  .checkbox-nav:checked
-    ~ .navbar
-    > .nav-list
-    > .nav-list__nav-item
-    > .nav-list__nav-link {
-    visibility: visible;
-    opacity: 1;
+
+    & > .nav-list > .nav-list__nav-item {
+      width: 90%;
+
+      & > .nav-list__nav-link {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
   }
 }
 
@@ -400,13 +394,6 @@
         @include border-none-tab-port;
       }
     }
-    // &--country {
-    //   &,
-    //   &:link,
-    //   &:visited {
-    //     transition: all 0.1s;
-    //   }
-    // }
     &--active {
       &:link,
       &:visited {
@@ -509,9 +496,7 @@
     right: 7.3rem;
     width: 24%;
 
-    // background-color: orange;
     @include respond(tab-land) {
-      // display: none;
       width: auto;
       top: 10%;
       right: 7%;
@@ -769,8 +754,6 @@
   padding: 1rem 0;
   display: flex;
 
-  // background-color: orange;
-
   @include respond(tab-port) {
     height: 12rem;
     width: 100%;
@@ -783,7 +766,6 @@
   &__item {
     padding: 0.5rem;
     display: block;
-    // background-color: orangered;
     @include respond(tab-port) {
       width: 30%;
     }
@@ -853,7 +835,6 @@
 
   &__item {
     margin: 1rem;
-    // background-color: orange;
     @include respond(phone) {
       width: 19rem;
       height: 22.5rem;
@@ -890,7 +871,6 @@
 
     @include respond(phone) {
       flex-direction: column;
-      // align-items: center;
     }
   }
 }
